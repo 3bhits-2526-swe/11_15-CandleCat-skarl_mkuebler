@@ -4,30 +4,18 @@ using System.Collections.Generic;
 public class CandleManager : MonoBehaviour
 {
     public static CandleManager Instance;
-    
-    [Header("Einstellungen")]
-    public int maxActiveCandles = 3;
-    
     private List<RoomLogic> activeCandles = new List<RoomLogic>();
 
-    void Awake()
-    {
-        Instance = this;
-    }
+    void Awake() { Instance = this; }
 
     public void TryToggleCandle(RoomLogic room)
     {
-        if (room.isCandleLit)
-        {
+        if (room.isCandleLit) {
             RemoveCandle(room);
-        }
-        else
-        {
-            if (activeCandles.Count >= maxActiveCandles)
-            {
+        } else {
+            if (activeCandles.Count >= 3) {
                 RemoveCandle(activeCandles[0]);
             }
-            
             room.SetCandleState(true);
             activeCandles.Add(room);
         }
@@ -35,8 +23,7 @@ public class CandleManager : MonoBehaviour
 
     public void RemoveCandle(RoomLogic room)
     {
-        if (activeCandles.Contains(room))
-        {
+        if (activeCandles.Contains(room)) {
             room.SetCandleState(false);
             activeCandles.Remove(room);
         }
