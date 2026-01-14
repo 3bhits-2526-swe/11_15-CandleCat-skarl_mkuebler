@@ -3,27 +3,31 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
-    public GameObject EasyButton;
-    public GameObject MediumButton;
-    public GameObject HardButton;
-
-
-    /*public void SelectEasy() {
+    void Start()
+    {
         DifficultySettings.CurrentDropRate = 0.4f;
-        StartGame();
+        DifficultySettings.ModeName = "Easy";
+    }
+
+    public void SelectEasy() {
+        DifficultySettings.CurrentDropRate = 0.4f;
+        DifficultySettings.ModeName = "Easy";
+        Debug.Log("Schwierigkeit auf EASY gesetzt.");
     }
 
     public void SelectMedium() {
         DifficultySettings.CurrentDropRate = 0.8f;
-        StartGame();
+        DifficultySettings.ModeName = "Medium";
+        Debug.Log("Schwierigkeit auf MEDIUM gesetzt.");
     }
 
     public void SelectHard() {
         DifficultySettings.CurrentDropRate = 1.5f;
-        StartGame();
+        DifficultySettings.ModeName = "Hard";
+        Debug.Log("Schwierigkeit auf HARD gesetzt.");
     }
 
     public void StartGame() {
         SceneManager.LoadScene("GameScene");
-    }*/
+    }
 }
