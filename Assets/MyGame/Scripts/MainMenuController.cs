@@ -3,7 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
-    public void SelectEasy() {
+    public GameObject EasyButton;
+    public GameObject MediumButton;
+    public GameObject HardButton;
+
+
+    /*public void SelectEasy() {
         DifficultySettings.CurrentDropRate = 0.4f;
         StartGame();
     }
@@ -20,5 +25,5 @@ public class MainMenuController : MonoBehaviour
 
     void StartGame() {
         SceneManager.LoadScene("GameScene");
-    }
+    }*/
 }
