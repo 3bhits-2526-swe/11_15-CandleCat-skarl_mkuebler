@@ -1595,6 +1595,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f8eb2f2b9d0a74997742bd9d108631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuController
+  EasyButton: {fileID: 260507857}
+  MediumButton: {fileID: 694618890}
+  HardButton: {fileID: 87740814}
 --- !u!4 &1968099287
 Transform:
   m_ObjectHideFlags: 0
