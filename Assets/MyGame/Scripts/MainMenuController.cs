@@ -28,6 +28,6 @@ public class MainMenuController : MonoBehaviour
     }
 
     public void StartGame() {
-        SceneManager.LoadScene("GameScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScreen");
     }
 }
