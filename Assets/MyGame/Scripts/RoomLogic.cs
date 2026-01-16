@@ -9,11 +9,16 @@ public class RoomLogic : MonoBehaviour
     public float tempHeatRate = 1.2f;
 
     public TextMeshProUGUI tempDisplay;
-    public GameObject candleVisual;
+
+    [Header("Visuals")]
+    public GameObject unlightedVisual; 
+    public GameObject lightedVisual;
 
     void Start()
     {
         tempDropRate = DifficultySettings.CurrentDropRate;
+        
+        UpdateVisuals(); 
     }
 
     void Update()
@@ -44,7 +49,17 @@ public class RoomLogic : MonoBehaviour
 
     public void SetCandleState(bool state)
     {
+        Debug.Log($"SetCandleState wurde aufgerufen! Neuer Status: {state}");
         isCandleLit = state;
-        if(candleVisual != null) candleVisual.SetActive(state);
+        UpdateVisuals();
+    }
+
+    private void UpdateVisuals()
+    {
+        if (lightedVisual != null) 
+            lightedVisual.SetActive(isCandleLit);
+            
+        if (unlightedVisual != null) 
+            unlightedVisual.SetActive(!isCandleLit);
     }
 }
